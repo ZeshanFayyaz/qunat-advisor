@@ -1,0 +1,43 @@
+{% comment %}
+  Qunat Skin Advisor — Theme App Extension block.
+  Drops the advisor into any page via the theme editor.
+  Loads the bundle built from `frontend/` (dist/advisor.iife.js + advisor.css).
+{% endcomment %}
+
+<div
+  id="qunat-advisor"
+  data-section-id="{{ section.id }}"
+  style="min-height: 320px;"
+></div>
+
+<script>
+  // Tell the frontend bundle where the backend lives + that we're in Shopify.
+  window.QUNAT_ADVISOR_API = "{{ block.settings.api_base_url }}";
+  window.QUNAT_ADVISOR_SHOPIFY = true;
+</script>
+
+<link rel="stylesheet" href="{{ 'advisor.css' | asset_url }}" />
+<script src="{{ 'advisor.iife.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Skin Advisor",
+  "target": "section",
+  "settings": [
+    {
+      "type": "url",
+      "id": "api_base_url",
+      "label": "Backend API URL",
+      "info": "Your deployed advisor backend (e.g. https://advisor-api.qunatbeauty.com)"
+    },
+    {
+      "type": "header",
+      "content": "Placement"
+    },
+    {
+      "type": "paragraph",
+      "content": "Add this block to any section via the theme editor. It mounts an advisor card inline."
+    }
+  ]
+}
+{% endschema %}

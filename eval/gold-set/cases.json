@@ -1,0 +1,263 @@
+[
+  {
+    "id": "acne_01",
+    "text": "I keep getting painful red pimples on my chin",
+    "expected_mode": "recommend",
+    "expected_top_concern": "acne_inflammatory",
+    "expected_primary_slug": "azelaik-12-micro-emulsion"
+  },
+  {
+    "id": "comedonal_01",
+    "text": "I get a lot of blackheads on my nose",
+    "expected_mode": "recommend",
+    "expected_top_concern": "acne_comedonal",
+    "expected_primary_slug": "bha-gentle-cleanser"
+  },
+  {
+    "id": "pih_01",
+    "text": "I have dark marks leftover from old breakouts",
+    "expected_mode": "recommend",
+    "expected_top_concern": "post_acne_marks",
+    "expected_primary_slug": "tranexamilk"
+  },
+  {
+    "id": "melasma_01",
+    "text": "I have melasma patches on my cheeks since pregnancy",
+    "expected_mode": "recommend",
+    "expected_top_concern": "melasma",
+    "expected_primary_slug": "tranexamilk"
+  },
+  {
+    "id": "sun_01",
+    "text": "I've got sun spots from last summer's vacation",
+    "expected_mode": "recommend",
+    "expected_top_concern": "sun_damage_pigmentation",
+    "expected_primary_slug": "tranexamilk"
+  },
+  {
+    "id": "texture_01",
+    "text": "My skin feels rough and bumpy",
+    "expected_mode": "recommend",
+    "expected_top_concern": "rough_texture",
+    "expected_primary_slug": "glycogommage-peeling-gel"
+  },
+  {
+    "id": "dryness_01",
+    "text": "My skin is dry and flaky, the barrier feels damaged",
+    "expected_mode": "recommend",
+    "expected_top_concern": "dryness_barrier",
+    "expected_primary_slug": "dermaseal-moisturizing-mask"
+  },
+  {
+    "id": "dehydration_01",
+    "text": "My skin drinks in everything and feels tight",
+    "expected_mode": "recommend",
+    "expected_top_concern": "dehydration",
+    "expected_primary_slug": "hydrapep-serum"
+  },
+  {
+    "id": "oily_01",
+    "text": "My skin is oily and shiny all day",
+    "expected_mode": "recommend",
+    "expected_top_concern": "oiliness_congestion",
+    "expected_primary_slug": "bha-gentle-cleanser"
+  },
+  {
+    "id": "finelines_01",
+    "text": "I'm starting to see fine lines on my forehead",
+    "expected_mode": "recommend",
+    "expected_top_concern": "fine_lines_early_aging",
+    "expected_primary_slug": "hydrapep-serum"
+  },
+  {
+    "id": "redness_01",
+    "text": "My cheeks are red and sensitive, reactive skin",
+    "expected_mode": "recommend",
+    "expected_top_concern": "redness_sensitivity",
+    "expected_primary_slug": "azelaik-12-micro-emulsion"
+  },
+  {
+    "id": "makeup_01",
+    "text": "I need something to remove heavy makeup and SPF",
+    "expected_mode": "recommend",
+    "expected_top_concern": "makeup_removal_need",
+    "expected_primary_slug": "matchamelt-balm"
+  },
+  {
+    "id": "dullness_ambiguous_01",
+    "text": "My skin looks so dull and tired",
+    "expected_mode": "clarify"
+  },
+  {
+    "id": "offtopic_01",
+    "text": "What do you think of The Ordinary niacinamide vs yours?",
+    "expected_mode": "recommend",
+    "assert_instagram_consultation": true
+  },
+  {
+    "id": "offtopic_02",
+    "text": "Can you recommend a good shampoo?",
+    "expected_mode": "recommend",
+    "assert_instagram_consultation": true
+  },
+  {
+    "id": "medical_01",
+    "text": "I have a mole that's been changing color, is this anything?",
+    "expected_mode": "recommend",
+    "assert_instagram_consultation": true
+  },
+  {
+    "id": "medical_02",
+    "text": "My face is swollen, I think I'm having an allergic reaction",
+    "expected_mode": "recommend",
+    "assert_instagram_consultation": true
+  },
+  {
+    "id": "qa_01",
+    "text": "Does your vitamin C serum sting? I'm sensitive.",
+    "expected_mode": "product_qa"
+  },
+  {
+    "id": "qa_02",
+    "text": "What's in your peeling gel?",
+    "expected_mode": "product_qa"
+  },
+  {
+    "id": "empty_01",
+    "text": "",
+    "expected_mode": "recommend",
+    "assert_instagram_consultation": true
+  },
+  {
+    "id": "acne_plus_pih_01",
+    "text": "I have breakouts and the dark marks leftover from old breakouts",
+    "expected_mode": "recommend",
+    "expected_top_concern": "acne_inflammatory",
+    "expected_primary_slug": "azelaik-12-micro-emulsion",
+    "expected_bundle": "the-pigment-protocol"
+  },
+  {
+    "id": "sensitive_rough_01",
+    "text": "my skin feels rough and bumpy",
+    "quiz": {
+      "skin_feel_midday": "C",
+      "pore_visibility": "B",
+      "reaction_to_products": "C",
+      "flushing_tendency": "A",
+      "natural_tone": "B",
+      "sun_behavior": "B",
+      "routine_commitment": "3-4"
+    },
+    "expected_mode": "recommend",
+    "expected_bundle": "the-barrier-defense",
+    "assert_no_slug": "glycogommage-peeling-gel",
+    "assert_sensitive_filter": true
+  },
+  {
+    "id": "melasma_deep_skin_01",
+    "text": "I have really bad melasma patches on my cheeks since pregnancy",
+    "quiz": {
+      "skin_feel_midday": "D",
+      "pore_visibility": "D",
+      "reaction_to_products": "A",
+      "flushing_tendency": "C",
+      "natural_tone": "D",
+      "sun_behavior": "E",
+      "routine_commitment": "3-4"
+    },
+    "expected_mode": "recommend",
+    "expected_top_concern": "melasma",
+    "expected_primary_slug": "tranexamilk",
+    "expected_bundle": "the-pigment-protocol",
+    "assert_high_pigmentation_risk": true
+  },
+  {
+    "id": "severity_significant_01",
+    "text": "my cystic acne is out of control, nothing works anymore, it's painful and constantly getting worse",
+    "expected_mode": "recommend",
+    "expected_top_concern": "acne_inflammatory",
+    "assert_instagram_consultation": true
+  },
+  {
+    "id": "routine_size_cap_01",
+    "text": "blackheads on my nose",
+    "quiz": {
+      "skin_feel_midday": "B",
+      "pore_visibility": "B",
+      "reaction_to_products": "A",
+      "flushing_tendency": "C",
+      "natural_tone": "B",
+      "sun_behavior": "C",
+      "routine_commitment": "1-2"
+    },
+    "expected_mode": "recommend",
+    "expected_primary_slug": "bha-gentle-cleanser",
+    "assert_no_supporting": true
+  },
+  {
+    "id": "matcha_upsell_present_01",
+    "text": "I break out a lot",
+    "expected_mode": "recommend",
+    "assert_matcha_upsell": true
+  },
+  {
+    "id": "combination_derivation_01",
+    "text": "blackheads",
+    "quiz": {
+      "skin_feel_midday": "A",
+      "pore_visibility": "B",
+      "reaction_to_products": "A",
+      "flushing_tendency": "C",
+      "natural_tone": "C",
+      "sun_behavior": "C"
+    },
+    "expected_mode": "recommend",
+    "assert_skin_type": "combination"
+  },
+  {
+    "id": "full_routine_push_01_default_appears",
+    "text": "I have breakouts and marks",
+    "quiz": {
+      "skin_feel_midday": "B",
+      "pore_visibility": "B",
+      "reaction_to_products": "A",
+      "flushing_tendency": "C",
+      "natural_tone": "C",
+      "sun_behavior": "C",
+      "routine_commitment": "3-4"
+    },
+    "expected_mode": "recommend",
+    "assert_secondary_bundle": "the-full-qunat-routine"
+  },
+  {
+    "id": "full_routine_push_02_suppressed_minimal",
+    "text": "I have breakouts and marks",
+    "quiz": {
+      "skin_feel_midday": "B",
+      "pore_visibility": "B",
+      "reaction_to_products": "A",
+      "flushing_tendency": "C",
+      "natural_tone": "C",
+      "sun_behavior": "C",
+      "routine_commitment": "1-2"
+    },
+    "expected_mode": "recommend",
+    "assert_no_secondary_bundle": true
+  },
+  {
+    "id": "full_routine_hero_01",
+    "text": "I have breakouts that leave marks behind",
+    "quiz": {
+      "skin_feel_midday": "B",
+      "pore_visibility": "B",
+      "reaction_to_products": "A",
+      "flushing_tendency": "C",
+      "natural_tone": "C",
+      "sun_behavior": "C",
+      "routine_commitment": "5+"
+    },
+    "expected_mode": "recommend",
+    "expected_bundle": "the-full-qunat-routine",
+    "assert_no_secondary_bundle": true
+  }
+]

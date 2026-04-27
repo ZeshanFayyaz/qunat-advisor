@@ -1,0 +1,154 @@
+[
+  {
+    "slug": "azelaik-12-micro-emulsion",
+    "name": "AzelaiK 12% Micro Emulsion",
+    "shopify_handle": "azelaik-emulsion",
+    "one_line": "A micronized 12% azelaic acid treatment for breakouts, post-acne marks, and reactive redness.",
+    "hero_ingredients": ["Azelaic Acid 12% (micronized)", "Panthenol", "Betaine", "Green Tea Extract"],
+    "ingredient_summary": "12% micronized azelaic acid in a micro-emulsion base (Olivem 1000, caprylic/capric triglycerides, cetyl alcohol) with glycerin, butylene glycol, propanediol, betaine, panthenol, and green tea; pH 5.0–5.5.",
+    "core_concerns": ["acne_inflammatory", "post_acne_marks", "redness_sensitivity"],
+    "secondary_concerns": ["acne_comedonal", "dullness_uneven_tone"],
+    "avoid_over_mapping": ["dryness_barrier", "fine_lines_early_aging", "makeup_removal_need", "melasma"],
+    "pairs_well_with": ["bha-gentle-cleanser", "hydrapep-serum", "dermaseal-moisturizing-mask"],
+    "never_pair_with": ["glycogommage-peeling-gel"],
+    "reason_phrases": [
+      "Micronized azelaic acid tackles active breakouts and the marks they leave, in one step.",
+      "A treatment built for reactive, breakout-prone skin that doesn't tolerate harsh actives."
+    ],
+    "cta_suggestions": ["Shop AzelaiK 12%", "See how it works"],
+    "caution": "Patch test if skin is highly reactive. Use SPF daily."
+  },
+  {
+    "slug": "niabutin-c-serum",
+    "name": "NiAbutin C Serum",
+    "shopify_handle": "niabutin-c",
+    "one_line": "A gentle daily brightening serum layering ascorbyl glucoside, alpha arbutin, and niacinamide.",
+    "hero_ingredients": ["Ascorbyl Glucoside 5%", "Alpha Arbutin 2%", "Niacinamide 2%", "Sodium Hyaluronate"],
+    "ingredient_summary": "Ascorbyl glucoside 5%, alpha arbutin 2%, niacinamide 2%, panthenol, sodium hyaluronate, licorice and mulberry extracts, green tea; pH ~5.2.",
+    "core_concerns": ["dullness_uneven_tone", "sun_damage_pigmentation", "post_acne_marks"],
+    "secondary_concerns": ["melasma", "oiliness_congestion"],
+    "avoid_over_mapping": ["acne_inflammatory", "dryness_barrier", "makeup_removal_need"],
+    "pairs_well_with": ["hydrapep-serum", "tranexamilk", "dermaseal-moisturizing-mask"],
+    "never_pair_with": [],
+    "reason_phrases": [
+      "A layered brightening complex designed for daily use without the sting of pure vitamin C.",
+      "Targets unevenness and mild pigmentation while staying comfortable on sensitive skin."
+    ],
+    "cta_suggestions": ["Shop NiAbutin C", "Add to brightening routine"],
+    "caution": "Use SPF daily for best brightening results."
+  },
+  {
+    "slug": "glycogommage-peeling-gel",
+    "name": "GlycoGommage Exfoliator",
+    "shopify_handle": "gommage-exfoliator",
+    "one_line": "A rinse-off peeling gel with 3% glycolic acid and microcrystalline cellulose for texture and dullness.",
+    "hero_ingredients": ["Glycolic Acid 3%", "Microcrystalline Cellulose", "Aloe", "Allantoin"],
+    "ingredient_summary": "3% glycolic acid + microcrystalline cellulose in a rinse-off gel, with aloe juice and allantoin; pH 5.0–5.2.",
+    "core_concerns": ["rough_texture", "dullness_uneven_tone"],
+    "secondary_concerns": ["acne_comedonal", "oiliness_congestion"],
+    "avoid_over_mapping": ["redness_sensitivity", "dryness_barrier", "acne_inflammatory", "fine_lines_early_aging"],
+    "pairs_well_with": ["niabutin-c-serum", "hydrapep-serum", "dermaseal-moisturizing-mask"],
+    "never_pair_with": ["azelaik-12-micro-emulsion"],
+    "reason_phrases": [
+      "Gentle dual exfoliation — chemical + physical — in a rinse-off format.",
+      "Resurfaces texture and lifts dullness without leaving skin raw."
+    ],
+    "cta_suggestions": ["Shop GlycoGommage", "See usage tips"],
+    "caution": "Use 1–2× weekly. Not for reactive, broken, or actively inflamed skin. Always follow with SPF."
+  },
+  {
+    "slug": "matchamelt-balm",
+    "name": "MatchaMelt Balm",
+    "shopify_handle": "matchamelt-balm",
+    "one_line": "A melting cleansing balm that dissolves makeup and SPF without stripping the barrier.",
+    "hero_ingredients": ["Caprylic/Capric Triglyceride", "High-Oleic Sunflower Oil", "Synthetic Beeswax", "Green Tea Extract"],
+    "ingredient_summary": "Anhydrous balm of caprylic/capric triglyceride, C12-15 alkyl benzoate, high-oleic sunflower oil, synthetic beeswax, cetearyl alcohol, and PEG emulsifiers for rinse-off; oil-soluble green tea.",
+    "core_concerns": ["makeup_removal_need"],
+    "secondary_concerns": ["dryness_barrier"],
+    "avoid_over_mapping": ["acne_inflammatory", "oiliness_congestion", "melasma", "fine_lines_early_aging"],
+    "pairs_well_with": ["bha-gentle-cleanser", "dermaseal-moisturizing-mask"],
+    "never_pair_with": [],
+    "reason_phrases": [
+      "A balm-to-oil cleanse that lifts makeup and SPF cleanly, leaving the barrier intact.",
+      "For anyone whose cleanser strips too much."
+    ],
+    "cta_suggestions": ["Shop MatchaMelt", "Add to double cleanse"],
+    "caution": null
+  },
+  {
+    "slug": "dermaseal-moisturizing-mask",
+    "name": "DermaSeal Barrier Cream",
+    "shopify_handle": "dermaseal-barrier-cream",
+    "one_line": "A ceramide-rich occlusive cream for dryness, tightness, and barrier recovery.",
+    "hero_ingredients": ["Ceramide NP", "Squalane", "Mineral Oil", "Glycerin", "Sodium PCA"],
+    "ingredient_summary": "Glycerin + sodium PCA humectants, mineral oil + squalane occlusives, ceramide NP, cetearyl alcohol, bearberry, green tea; pH 5.4–5.6.",
+    "core_concerns": ["dryness_barrier", "dehydration"],
+    "secondary_concerns": ["redness_sensitivity", "post_acne_marks"],
+    "avoid_over_mapping": ["oiliness_congestion", "acne_inflammatory", "acne_comedonal"],
+    "pairs_well_with": ["hydrapep-serum", "azelaik-12-micro-emulsion", "glycogommage-peeling-gel"],
+    "never_pair_with": [],
+    "reason_phrases": [
+      "A ceramide + squalane seal for skin that feels tight, flaky, or over-exfoliated.",
+      "Use as an overnight mask or a weekly barrier reset."
+    ],
+    "cta_suggestions": ["Shop DermaSeal", "Add barrier repair"],
+    "caution": null
+  },
+  {
+    "slug": "hydrapep-serum",
+    "name": "HydraPep Serum",
+    "shopify_handle": "hydrapep-serum",
+    "one_line": "A triple-weight hyaluronic acid serum with 3% Matrixyl 3000 for hydration and early fine lines.",
+    "hero_ingredients": ["Hyaluronic Acid (HMW/NMW/LMW)", "Matrixyl 3000 (3%)", "Panthenol"],
+    "ingredient_summary": "Three molecular weights of hyaluronic acid, 3% Matrixyl 3000, glycerin, panthenol; pH 5.3–5.7.",
+    "core_concerns": ["dehydration", "fine_lines_early_aging"],
+    "secondary_concerns": ["dryness_barrier", "post_acne_marks"],
+    "avoid_over_mapping": ["acne_inflammatory", "oiliness_congestion", "makeup_removal_need"],
+    "pairs_well_with": ["niabutin-c-serum", "tranexamilk", "dermaseal-moisturizing-mask", "azelaik-12-micro-emulsion"],
+    "never_pair_with": [],
+    "reason_phrases": [
+      "Multi-depth hydration paired with a clinically used peptide complex for early fine lines.",
+      "Layerable under anything else in the routine."
+    ],
+    "cta_suggestions": ["Shop HydraPep", "Layer into routine"],
+    "caution": null
+  },
+  {
+    "slug": "bha-gentle-cleanser",
+    "name": "BHA Gentle Cleanser",
+    "shopify_handle": "salicylic-acid-face-wash",
+    "one_line": "A 1% salicylic acid cleanser that clears congestion without stripping the barrier.",
+    "hero_ingredients": ["Salicylic Acid 1%", "Niacinamide", "Panthenol", "Sodium Hyaluronate"],
+    "ingredient_summary": "1% salicylic acid in a mild surfactant base (cocamidopropyl betaine, decyl glucoside, sodium lauroyl methyl isethionate) with niacinamide, panthenol, and sodium hyaluronate.",
+    "core_concerns": ["oiliness_congestion", "acne_comedonal", "acne_inflammatory"],
+    "secondary_concerns": ["rough_texture"],
+    "avoid_over_mapping": ["dryness_barrier", "makeup_removal_need", "fine_lines_early_aging"],
+    "pairs_well_with": ["matchamelt-balm", "azelaik-12-micro-emulsion", "hydrapep-serum"],
+    "never_pair_with": [],
+    "reason_phrases": [
+      "Daily BHA cleanse that keeps pores clear without drying the rest of your skin out.",
+      "For oily, congested, and breakout-prone skin."
+    ],
+    "cta_suggestions": ["Shop BHA Cleanser", "Start the routine"],
+    "caution": "Use SPF daily."
+  },
+  {
+    "slug": "tranexamilk",
+    "name": "Tranexamilk Toner",
+    "shopify_handle": "tranexamilk-toner",
+    "one_line": "A 4% tranexamic acid emulsion for melasma, stubborn dark spots, and post-acne pigmentation.",
+    "hero_ingredients": ["Tranexamic Acid 4%", "Panthenol", "Betaine", "Allantoin"],
+    "ingredient_summary": "4% tranexamic acid in a milky emulsion (Olivem 1000, caprylic/capric triglycerides, cetyl alcohol) with betaine, glycerin, panthenol, allantoin, and a low dose of lactic acid.",
+    "core_concerns": ["melasma", "sun_damage_pigmentation", "post_acne_marks"],
+    "secondary_concerns": ["dullness_uneven_tone"],
+    "avoid_over_mapping": ["acne_inflammatory", "dryness_barrier", "makeup_removal_need", "fine_lines_early_aging"],
+    "pairs_well_with": ["niabutin-c-serum", "hydrapep-serum", "dermaseal-moisturizing-mask"],
+    "never_pair_with": [],
+    "reason_phrases": [
+      "Targeted tranexamic acid for the pigmentation that brighteners alone rarely shift.",
+      "A milky, comfortable emulsion — no classic vitamin C sting."
+    ],
+    "cta_suggestions": ["Shop Tranexamilk", "Build pigmentation routine"],
+    "caution": "Use SPF daily — pigmentation treatments require sun protection."
+  }
+]

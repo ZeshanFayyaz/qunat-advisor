@@ -1,0 +1,79 @@
+[
+  {
+    "slug": "the-full-qunat-routine",
+    "name": "The Full Qunat Routine",
+    "shopify_handle": "the-full-qunat-routine",
+    "tagline": "The complete 8-step protocol. Our most comprehensive system.",
+    "products": [
+      "matchamelt-balm",
+      "bha-gentle-cleanser",
+      "tranexamilk",
+      "glycogommage-peeling-gel",
+      "niabutin-c-serum",
+      "azelaik-12-micro-emulsion",
+      "hydrapep-serum",
+      "dermaseal-moisturizing-mask"
+    ],
+    "is_hero": true,
+    "is_all_in": true,
+    "positioning": "Every Qunat formula, working together.",
+    "why": "For when skin needs more than a single fix — total-spectrum care from lipid cleansing to barrier sealing. Our most complete protocol and deepest savings.",
+    "priority_weight": 100
+  },
+  {
+    "slug": "the-double-cleanse-routine",
+    "name": "The Double Cleanse Routine",
+    "shopify_handle": "the-double-cleanse-routine",
+    "tagline": "The foundation for every skin type.",
+    "products": ["matchamelt-balm", "bha-gentle-cleanser"],
+    "is_hero": true,
+    "is_double_cleanse": true,
+    "positioning": "Non-negotiable. We recommend this with every routine — regardless of skin type.",
+    "why": "MatchaMelt lifts makeup, SPF, and the day. BHA Gentle Cleanser clears what's left without stripping. Do this twice a day and everything else you layer on works better.",
+    "priority_weight": 90
+  },
+  {
+    "slug": "the-barrier-defense",
+    "name": "The Barrier Defense",
+    "shopify_handle": "the-barrier-defense",
+    "tagline": "For reactive, compromised, or over-exfoliated skin.",
+    "products": ["hydrapep-serum", "azelaik-12-micro-emulsion", "dermaseal-moisturizing-mask"],
+    "is_hero": false,
+    "positioning": "Rebuild tolerance and resilience.",
+    "why": "HydraPep rehydrates the deeper layers, AzelaiK calms inflammation without irritation, DermaSeal seals it all in with ceramides and squalane. A full reset.",
+    "priority_weight": 70
+  },
+  {
+    "slug": "skin-hydration-essentials",
+    "name": "Skin Hydration Essentials",
+    "shopify_handle": "skin-hydration-essentials",
+    "tagline": "For skin that drinks in everything.",
+    "products": ["hydrapep-serum", "dermaseal-moisturizing-mask"],
+    "is_hero": false,
+    "positioning": "Multi-depth hydration, sealed in.",
+    "why": "HydraPep layers three weights of hyaluronic acid for depth, DermaSeal locks it in with a ceramide-squalane finish. Flat, dehydrated skin, answered.",
+    "priority_weight": 70
+  },
+  {
+    "slug": "the-pigment-protocol",
+    "name": "The Pigment Protocol",
+    "shopify_handle": "the-pigment-protocol",
+    "tagline": "For stubborn dark spots, melasma, and uneven tone.",
+    "products": ["tranexamilk", "niabutin-c-serum", "azelaik-12-micro-emulsion"],
+    "is_hero": false,
+    "positioning": "A three-actives approach to pigmentation.",
+    "why": "Tranexamilk targets the stubborn patches. NiAbutin C brightens daily tone. AzelaiK calms any PIE left behind. The most complete pigmentation stack we make.",
+    "priority_weight": 80
+  },
+  {
+    "slug": "texture-reset",
+    "name": "Texture Reset",
+    "shopify_handle": "texture-reset",
+    "tagline": "For rough, bumpy, congested skin.",
+    "products": ["glycogommage-peeling-gel", "azelaik-12-micro-emulsion"],
+    "is_hero": false,
+    "positioning": "Smooth the surface, clear underneath.",
+    "why": "GlycoGommage resurfaces weekly, AzelaiK works every evening to clear congestion and inflammation at a deeper layer.",
+    "priority_weight": 70
+  }
+]
