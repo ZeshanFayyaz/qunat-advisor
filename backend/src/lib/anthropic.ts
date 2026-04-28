@@ -111,16 +111,25 @@ function extractText(res: Anthropic.Messages.Message): string {
 }
 
 function parseJson<T>(text: string, schema: z.ZodSchema<T>): T {
-  // Strip markdown fences if the model ignored instructions
-  const cleaned = text
-    .replace(/^```(?:json)?\s*/i, "")
-    .replace(/\s*```\s*$/i, "")
+  // Strip markdown fences if the model wrapped output in them
+  let cleaned = text
+    .replace(/```(?:json)?\s*/gi, "")
+    .replace(/\s*```\s*/g, "")
     .trim();
+
+  // If there's any preamble or postamble, extract just the outer JSON object.
+  // Find first '{' and matching last '}' — works for any prose surrounding it.
+  const firstBrace = cleaned.indexOf("{");
+  const lastBrace = cleaned.lastIndexOf("}");
+  if (firstBrace !== -1 && lastBrace > firstBrace) {
+    cleaned = cleaned.slice(firstBrace, lastBrace + 1);
+  }
+
   let parsed: unknown;
   try {
     parsed = JSON.parse(cleaned);
   } catch (e) {
-    throw new Error(`Model returned non-JSON: ${cleaned.slice(0, 200)}`);
+    throw new Error(`Model returned non-JSON: ${cleaned.slice(0, 300)}`);
   }
   return schema.parse(parsed);
 }
