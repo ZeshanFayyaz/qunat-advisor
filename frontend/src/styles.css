@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700&family=Bodoni+Moda:ital,opsz,wght@1,6..96,400;1,6..96,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Bodoni+Moda:ital,opsz,wght@1,6..96,400;1,6..96,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap");
 
 /* ---------- Demo page chrome ---------- */
 body {
@@ -82,20 +82,22 @@ body {
   --qa-radius-lg: 16px;
   --qa-radius-md: 10px;
   --qa-radius-sm: 3px;
-  /* Display: Barlow Condensed for headings/CTAs/badges */
+  /* Display: Barlow Condensed for headings/CTAs/badges/eyebrows ONLY */
   --qa-display: "Barlow Condensed", "Helvetica Neue", Arial, sans-serif;
-  /* Italic accent: Bodoni Moda (only used inside <em> within headings) */
+  /* Italic accent: Bodoni Moda — for <em> inside headings */
   --qa-italic: "Bodoni Moda", "Didot", "Times New Roman", serif;
   /* Legacy alias — most existing styles reference --qa-serif. Maps to display. */
   --qa-serif: var(--qa-display);
-  /* Body: same as display sans by default — inherits cleanly */
-  --qa-sans: "Barlow Condensed", "Helvetica Neue", Arial, sans-serif;
+  /* Body: DM Sans, the highly readable workhorse */
+  --qa-sans: "DM Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   --qa-ease: cubic-bezier(0.2, 0, 0, 1);
 
   font-family: var(--qa-sans);
   color: var(--qa-ink);
   font-weight: 400;
-  letter-spacing: 0.01em;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0;
   max-width: 820px;
   margin: 0 auto;
 }
@@ -105,29 +107,35 @@ body {
 .qunat-advisor *::after { box-sizing: border-box; }
 
 /* === HEADING SYSTEM ===
-   By default, all headings use Barlow Condensed UPPERCASE.
-   Wrap any "accent word" in <em> tags inside the heading to render it
-   in Bodoni Moda italic lowercase — the "vamp" accent. */
+   h1/h2 (large titles) get the brand "vamp" treatment: Barlow Condensed UPPERCASE,
+   with <em> rendering as Bodoni Moda italic lowercase for accent words.
+   h3/h4 (smaller subheadings) stay in DM Sans bold for readability. */
 .qunat-advisor h1,
-.qunat-advisor h2,
-.qunat-advisor h3,
-.qunat-advisor h4 {
+.qunat-advisor h2 {
   font-family: var(--qa-display);
-  font-weight: 500;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.005em;
   margin: 0;
+  line-height: 1.05;
 }
 .qunat-advisor h1 em,
 .qunat-advisor h2 em,
-.qunat-advisor h3 em,
-.qunat-advisor h4 em,
 .qunat-advisor .qa-italic {
   font-family: var(--qa-italic);
   font-style: italic;
   font-weight: 400;
   text-transform: lowercase;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.005em;
+}
+.qunat-advisor h3,
+.qunat-advisor h4 {
+  font-family: var(--qa-sans);
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+  margin: 0;
+  line-height: 1.25;
 }
 
 .qa-card {
@@ -166,11 +174,11 @@ body {
 .qa-title {
   font-family: var(--qa-display);
   font-weight: 600;
-  font-size: 32px;
+  font-size: 38px;
   line-height: 1.05;
   letter-spacing: 0.005em;
   text-transform: uppercase;
-  margin: 0 0 8px;
+  margin: 0 0 12px;
 }
 .qa-title em {
   font-family: var(--qa-italic);
@@ -182,13 +190,13 @@ body {
 .qa-title em { font-style: italic; font-weight: 400; }
 .qa-subtitle {
   color: var(--qa-muted);
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.55;
   margin: 0 0 28px;
   max-width: 56ch;
 }
 .qa-trust {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--qa-subtle);
   line-height: 1.5;
   margin: 0;
@@ -442,9 +450,9 @@ body {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 14px 24px;
+  padding: 15px 26px;
   font-family: var(--qa-display);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -592,11 +600,12 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 14px 16px;
+  padding: 15px 18px;
   border: 1px solid var(--qa-border);
   border-radius: var(--qa-radius-md);
   background: var(--qa-bg);
-  font-size: 14px;
+  font-size: 15px;
+  line-height: 1.4;
   color: var(--qa-ink);
   cursor: pointer;
   text-align: left;
@@ -635,9 +644,9 @@ body {
   text-transform: lowercase;
 }
 .qa-progress-track {
-  width: 280px;
+  width: 320px;
   max-width: 100%;
-  height: 3px;
+  height: 6px;
   margin: 32px auto 16px;
   background: var(--qa-border);
   border-radius: 999px;
@@ -646,8 +655,8 @@ body {
 .qa-progress-fill {
   height: 100%;
   background: var(--qa-ink);
-  transition: width 60ms linear;
   border-radius: 999px;
+  /* No CSS transition — JS updates the width every frame via requestAnimationFrame. */
 }
 .qa-processing-meta {
   font-family: var(--qa-display);
@@ -782,16 +791,20 @@ body {
 }
 
 .qa-report-opener {
-  font-family: var(--qa-serif);
-  font-weight: 300;
-  font-size: 24px;
-  line-height: 1.3;
-  letter-spacing: -0.005em;
+  font-family: var(--qa-sans);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.55;
+  letter-spacing: 0;
   margin: 0;
   color: var(--qa-ink);
   max-width: 58ch;
 }
-.qa-report-opener em { font-style: italic; font-weight: 400; }
+.qa-report-opener em {
+  font-family: var(--qa-italic);
+  font-style: italic;
+  font-weight: 400;
+}
 
 /* 3. BUNDLE CARD */
 .qa-bundle {
@@ -824,27 +837,36 @@ body {
   flex-shrink: 0;
 }
 .qa-bundle-tag {
+  font-family: var(--qa-display);
   font-size: 10px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.85);
   margin: 0 0 8px;
-  font-weight: 500;
+  font-weight: 700;
 }
 .qa-bundle-name {
-  font-family: var(--qa-serif);
-  font-weight: 400;
+  font-family: var(--qa-display);
+  font-weight: 600;
   font-size: 30px;
-  line-height: 1.15;
-  margin: 0 0 4px;
-  letter-spacing: -0.01em;
+  line-height: 1.05;
+  margin: 0 0 6px;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+}
+.qa-bundle-name em {
+  font-family: var(--qa-italic);
+  font-style: italic;
+  font-weight: 400;
+  text-transform: lowercase;
 }
 .qa-bundle-tagline {
-  font-family: var(--qa-serif);
+  font-family: var(--qa-italic);
   font-style: italic;
-  font-size: 16px;
-  color: rgba(255, 255, 255, 0.78);
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.88);
   margin: 0;
+  text-transform: lowercase;
 }
 .qa-bundle-products {
   display: flex;
@@ -869,9 +891,10 @@ body {
   background: #fff;
 }
 .qa-bundle-reason {
-  font-size: 14px;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.88);
+  font-family: var(--qa-sans);
+  font-size: 16px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.92);
   margin: 0 0 24px;
   max-width: 58ch;
 }
@@ -886,13 +909,15 @@ body {
 }
 .qa-bundle-price { display: flex; align-items: baseline; gap: 10px; }
 .qa-bundle-price-after {
-  font-family: var(--qa-serif);
+  font-family: var(--qa-display);
   font-size: 28px;
-  font-weight: 400;
+  font-weight: 600;
+  letter-spacing: 0.005em;
 }
 .qa-bundle-price-before {
+  font-family: var(--qa-sans);
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.55);
   text-decoration: line-through;
 }
 .qa-bundle-cta {
@@ -1066,31 +1091,35 @@ body {
   margin-bottom: 8px;
 }
 .qa-product-row-tag {
+  font-family: var(--qa-display);
   font-size: 10px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--qa-accent);
-  margin: 0 0 4px;
-  font-weight: 500;
+  margin: 0 0 6px;
+  font-weight: 700;
 }
 .qa-product-row-name {
-  font-family: var(--qa-serif);
-  font-weight: 400;
-  font-size: 19px;
-  line-height: 1.2;
+  font-family: var(--qa-sans);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.25;
   margin: 0;
+  letter-spacing: -0.005em;
 }
 .qa-product-row-price {
-  font-family: var(--qa-serif);
-  font-style: italic;
-  font-size: 16px;
-  color: var(--qa-muted);
+  font-family: var(--qa-sans);
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0.005em;
+  color: var(--qa-ink);
   flex-shrink: 0;
 }
 .qa-product-row-reason {
-  font-size: 13px;
+  font-family: var(--qa-sans);
+  font-size: 15px;
   line-height: 1.55;
-  color: var(--qa-ink);
+  color: var(--qa-muted);
   margin: 0 0 14px;
   flex: 1;
 }

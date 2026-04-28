@@ -138,7 +138,7 @@ adviseRouter.post("/", upload.single("image"), async (req, res) => {
         payload = await Promise.race([
           generate(mode, classification, userText, profile),
           new Promise((_resolve, reject) =>
-            setTimeout(() => reject(new Error("generate_timeout")), 7500)
+            setTimeout(() => reject(new Error("generate_timeout")), 12000)
           ),
         ]);
       }

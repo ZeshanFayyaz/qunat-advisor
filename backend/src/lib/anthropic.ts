@@ -69,7 +69,7 @@ export async function callGenerator<T>(
 ): Promise<T> {
   if (!client) throw new Error("Anthropic client not configured");
 
-  const model = process.env.ANTHROPIC_MODEL_GENERATOR || "claude-sonnet-4-5";
+  const model = process.env.ANTHROPIC_MODEL_GENERATOR || "claude-haiku-4-5-20251001";
 
   return callWithRetry(
     async (extraSystemNote?: string) => {
