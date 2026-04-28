@@ -26,9 +26,7 @@ export function ClarifyState({ data, onAnswer, onBack }: Props) {
   return (
     <div class="qa-card">
       <p class="qa-eyebrow">One moment</p>
-      <h2 class="qa-title">
-        <em>{data.opener}</em>
-      </h2>
+      <h2 class="qa-title">{data.opener}</h2>
 
       {data.questions.map((q) => (
         <div key={q.id}>
