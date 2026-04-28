@@ -576,26 +576,34 @@ body {
 .qa-quiz-progress span { flex: 1; height: 2px; background: var(--qa-border); border-radius: 2px; }
 .qa-quiz-progress span.is-done { background: var(--qa-ink); }
 
-.qa-quiz-section { padding: 0 0 32px; border-bottom: 1px solid var(--qa-border); margin-bottom: 32px; }
+.qa-quiz-section { padding: 0 0 36px; border-bottom: 1px solid var(--qa-border); margin-bottom: 36px; }
 .qa-quiz-section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
 
 .qa-quiz-group-label {
+  font-family: var(--qa-display);
   font-size: 11px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--qa-accent);
-  margin: 0 0 20px;
-  font-weight: 500;
+  margin: 0 0 24px;
+  font-weight: 700;
 }
 
-.qa-question { margin: 32px 0 12px; font-size: 15px; font-weight: 500; color: var(--qa-ink); }
-.qa-question:first-child { margin-top: 0; }
-/* Tighter top margin when a question follows the group label — they're already visually paired */
-.qa-quiz-group-label + .qa-question,
-.qa-quiz-group-label + .qa-quiz-options .qa-question:first-of-type { margin-top: 0; }
+/* Every question gets the same generous top spacing for consistency */
+.qa-question {
+  margin: 36px 0 14px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--qa-ink);
+  line-height: 1.4;
+}
+/* First question after a group label sits closer — no double-space */
+.qa-question:first-child,
+.qa-quiz-group-label + .qa-question {
+  margin-top: 0;
+}
 
 .qa-quiz-options { display: grid; gap: 10px; grid-template-columns: 1fr; }
-.qa-quiz-options + .qa-question { margin-top: 36px; }
 .qa-quiz-option {
   display: flex;
   align-items: center;

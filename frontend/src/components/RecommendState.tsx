@@ -83,9 +83,7 @@ export function RecommendState({ data, classification, onReset }: Props) {
         </div>
 
         <p class="qa-recommendation-header">Your Match</p>
-        <p class="qa-report-opener">
-          <em>{data.opener}</em>
-        </p>
+        <p class="qa-report-opener">{data.opener}</p>
       </div>
 
       {/* 3. BUNDLE — hero / primary sales moment if present */}
