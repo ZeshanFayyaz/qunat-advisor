@@ -137,15 +137,14 @@ export function IntroState({ onSubmit }: Props) {
                       type="file"
                       accept="image/*"
                       // @ts-ignore
-                      capture="user"
                       onChange={(e) => handleFile((e.currentTarget as HTMLInputElement).files?.[0])}
                     />
                     <svg class="qa-camera-icon" viewBox="0 0 24 24" aria-hidden="true">
                       <path d="M4 7h3l2-3h6l2 3h3a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1z" />
                       <circle cx="12" cy="13" r="4" />
                     </svg>
-                    <p class="qa-capture-label">Take a photo</p>
-                    <p class="qa-capture-hint">or drop / upload from gallery · no filters</p>
+                    <p class="qa-capture-label">Add a photo</p>
+                    <p class="qa-capture-hint">Take new or choose from gallery · no filters</p>
                   </label>
                   <button
                     type="button"
