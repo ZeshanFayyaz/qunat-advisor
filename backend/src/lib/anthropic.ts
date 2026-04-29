@@ -75,7 +75,7 @@ export async function callGenerator<T>(
     async (extraSystemNote?: string) => {
       const res = await client.messages.create({
         model,
-        max_tokens: 600,
+        max_tokens: 4000,
         temperature: 0.4,
         system: extraSystemNote ? `${systemPrompt}\n\n${extraSystemNote}` : systemPrompt,
         messages: [
