@@ -21,6 +21,15 @@ export function App() {
     track("advisor_opened");
   }, []);
 
+  useEffect(() => {
+    // Scroll the advisor's mount point into view at the top of the viewport
+    // whenever we transition between major states (intro/quiz/processing/result/etc).
+    const el = document.getElementById("qunat-advisor");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [state.kind]);
+
   const submitToAPI = async (opts: {
     text: string;
     image: Blob | null;
