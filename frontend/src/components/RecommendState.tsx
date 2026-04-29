@@ -31,7 +31,7 @@ export function RecommendState({ data, classification, onReset }: Props) {
       bundle: target.slug,
     });
     const { url } = await addToCart(handles);
-    window.location.href = url;
+    window.open(url, "_blank");
   };
 
   const handleFeedback = (r: "up" | "down") => {
@@ -67,7 +67,7 @@ export function RecommendState({ data, classification, onReset }: Props) {
             class="qa-matcha-banner-cta"
             onClick={() => {
               track("advisor_cta_clicked", { slug: "matchamelt-balm", cta: "matcha_upsell" });
-              window.location.href = pdpUrl("matchamelt-balm");
+              window.open(pdpUrl("matchamelt-balm"), "_blank");
             }}
           >
             Add MatchaMelt →
@@ -243,26 +243,23 @@ export function RecommendState({ data, classification, onReset }: Props) {
                       <p class="qa-product-row-tag">{isPrimary ? "Start here" : "Pair with"}</p>
                       <h4 class="qa-product-row-name">{p.name}</h4>
                     </div>
-                    {p.price ? (
-                      <span class="qa-product-row-price">{p.price}</span>
-                    ) : null}
                   </div>
                   <p class="qa-product-row-reason">{pr.reason}</p>
-                  <button
-                    type="button"
-                    class={isPrimary ? "qa-btn" : "qa-btn qa-btn--ghost"}
+                  
+                    <a
+                    href={pdpUrl(p.shopify_handle)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="qa-btn"
                     onClick={() => {
                       track("advisor_cta_clicked", {
                         slug: p.slug,
                         cta: isPrimary ? "primary" : "supporting",
                       });
-                      window.location.href = pdpUrl(p.shopify_handle);
                     }}
                   >
-                    {p.price
-                      ? `Shop ${p.name.split(" ")[0]} — ${p.price} →`
-                      : `Shop ${p.name.split(" ")[0]} →`}
-                  </button>
+                    Shop {p.name.split(" ")[0]} →
+                  </a>
                 </div>
               </div>
             );
