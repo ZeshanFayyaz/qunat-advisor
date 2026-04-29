@@ -679,6 +679,7 @@ body {
   overflow: hidden;
 }
 .qa-progress-fill {
+  display: block !important;
   height: 100%;
   width: 0;
   background: var(--qa-ink);
