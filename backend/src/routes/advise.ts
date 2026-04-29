@@ -143,11 +143,9 @@ adviseRouter.post("/", upload.single("image"), async (req, res) => {
         ]);
       }
     } catch (err: any) {
-      logger.warn("generate_failed_using_fallback", {
-        error: err?.message,
-        mode,
-        live: isLive(),
-      });
+      logger.warn(
+        `generate_failed_using_fallback: error="${err?.message ?? err}" mode=${mode} live=${isLive()}`
+      );
       payload = fallbackRecommendation(profile);
       mode = "recommend";
     }

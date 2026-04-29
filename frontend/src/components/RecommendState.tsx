@@ -83,7 +83,9 @@ export function RecommendState({ data, classification, onReset }: Props) {
         </div>
 
         <p class="qa-recommendation-header">Your Match</p>
-        <p class="qa-report-opener">{data.opener}</p>
+        <p class="qa-report-opener">
+          {data.opener}
+        </p>
       </div>
 
       {/* 3. BUNDLE — hero / primary sales moment if present */}
@@ -245,8 +247,7 @@ export function RecommendState({ data, classification, onReset }: Props) {
                     </div>
                   </div>
                   <p class="qa-product-row-reason">{pr.reason}</p>
-                  
-                    <a
+                  <a
                     href={pdpUrl(p.shopify_handle)}
                     target="_blank"
                     rel="noopener noreferrer"

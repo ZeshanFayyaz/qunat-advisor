@@ -48,7 +48,7 @@ export async function callClassifier<T>(
     async (extraSystemNote?: string) => {
       const res = await client.messages.create({
         model,
-        max_tokens: 2000,
+        max_tokens: 800,
         temperature: 0.1,
         system: extraSystemNote ? `${systemPrompt}\n\n${extraSystemNote}` : systemPrompt,
         messages: [{ role: "user", content }],
@@ -75,7 +75,7 @@ export async function callGenerator<T>(
     async (extraSystemNote?: string) => {
       const res = await client.messages.create({
         model,
-        max_tokens: 2000,
+        max_tokens: 600,
         temperature: 0.4,
         system: extraSystemNote ? `${systemPrompt}\n\n${extraSystemNote}` : systemPrompt,
         messages: [
@@ -97,7 +97,7 @@ async function callWithRetry<T>(
   try {
     return await fn();
   } catch (e: any) {
-    logger.warn("first call failed, retrying", { error: e?.message });
+    logger.warn(`first call failed, retrying: ${e?.message ?? e}`);
     return await fn(
       "Your previous response did not match the required JSON schema. Return ONLY valid JSON matching the schema in this prompt. No prose. No markdown fences."
     );

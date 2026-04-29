@@ -111,7 +111,7 @@ function SingleSelect({
   onChange: (v: string) => void;
 }) {
   return (
-    <div>
+    <div class="qa-question-block">
       <p class="qa-question">{q.label}</p>
       <div class="qa-quiz-options">
         {q.options.map((o) => (
