@@ -14,6 +14,7 @@ type Props = {
 export function RecommendState({ data, classification, onReset }: Props) {
   const [rating, setRating] = useState<"up" | "down" | null>(null);
   const [adding, setAdding] = useState<string | null>(null);
+  const [matchaAdded, setMatchaAdded] = useState(false);
 
   const primary = data.primary_product;
   const bundle = data.bundle?.bundle ?? null;
@@ -65,18 +66,20 @@ export function RecommendState({ data, classification, onReset }: Props) {
           <button
             type="button"
             class="qa-matcha-banner-cta"
+            disabled={matchaAdded}
             onClick={async () => {
               track("advisor_cta_clicked", { slug: "matchamelt-balm", cta: "matcha_upsell" });
               const result = await addToCart(["matchamelt-balm"]);
               if (result.ok) {
                 track("advisor_add_to_cart_clicked", { slug: "matchamelt-balm", cta: "matcha_upsell" });
-                window.open(result.url, "_blank");
+                setMatchaAdded(true);
               } else {
+                // Cart API failed (likely demo mode) — fall back to PDP
                 window.open(pdpUrl("matchamelt-balm"), "_blank");
               }
             }}
           >
-            Add MatchaMelt →
+            {matchaAdded ? "Added to cart ✓" : "Add MatchaMelt →"}
           </button>
         </div>
       )}

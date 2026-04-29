@@ -29,7 +29,7 @@ export function ClarifyState({ data, onAnswer, onBack }: Props) {
       <h2 class="qa-title">{data.opener}</h2>
 
       {data.questions.map((q) => (
-        <div key={q.id}>
+        <div key={q.id} class="qa-question-block">
           <p class="qa-question">{q.text}</p>
           <div class="qa-chips">
             {q.chips.map((chip) => (
