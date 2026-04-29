@@ -65,9 +65,15 @@ export function RecommendState({ data, classification, onReset }: Props) {
           <button
             type="button"
             class="qa-matcha-banner-cta"
-            onClick={() => {
+            onClick={async () => {
               track("advisor_cta_clicked", { slug: "matchamelt-balm", cta: "matcha_upsell" });
-              window.open(pdpUrl("matchamelt-balm"), "_blank");
+              const result = await addToCart(["matchamelt-balm"]);
+              if (result.ok) {
+                track("advisor_add_to_cart_clicked", { slug: "matchamelt-balm", cta: "matcha_upsell" });
+                window.open(result.url, "_blank");
+              } else {
+                window.open(pdpUrl("matchamelt-balm"), "_blank");
+              }
             }}
           >
             Add MatchaMelt →
