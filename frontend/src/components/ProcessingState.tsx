@@ -20,7 +20,7 @@ export function ProcessingState() {
       <p class="qa-processing-text">{MESSAGES[idx]}</p>
 
       <div class="qa-progress-track" aria-hidden="true">
-        <div class="qa-progress-fill" />
+        <div class="qa-progress-fill"><span style="display:none">.</span></div>
       </div>
 
       <p class="qa-processing-meta">
