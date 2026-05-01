@@ -122,6 +122,13 @@ export function RecommendState({ data, classification, onReset }: Props) {
         </p>
       </div>
 
+      <EmailCaptureCard
+        entryPoint="result"
+        variant="full"
+        topConcern={topConcern}
+        allConcerns={allConcernsString}
+      />
+
       {/* 3. BUNDLE — hero / primary sales moment if present */}
       {bundle && data.bundle && (
         <>
@@ -361,12 +368,6 @@ export function RecommendState({ data, classification, onReset }: Props) {
         )}
       </div>
 
-      <EmailCaptureCard
-        entryPoint="result"
-        variant="full"
-        topConcern={topConcern}
-        allConcerns={allConcernsString}
-      />
 
       {/* 6. Instagram consultation — only when AI flagged severity */}
       {data.instagram_consultation && (

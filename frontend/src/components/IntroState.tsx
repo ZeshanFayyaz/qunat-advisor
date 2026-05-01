@@ -68,6 +68,8 @@ export function IntroState({ onSubmit }: Props) {
           Pick any path below. Combine them for the best match.
         </p>
 
+        <EmailCaptureCard entryPoint="intro" variant="compact" />
+
         {/* Three-path tabs */}
         <div class="qa-path-tabs" role="tablist">
           <button
@@ -215,8 +217,6 @@ export function IntroState({ onSubmit }: Props) {
           </button>
         </div>
       </div>
-
-      <EmailCaptureCard entryPoint="intro" variant="compact" />
 
       {/* Always-visible Instagram consultation — safety net for significant concerns */}
       <div class="qa-instagram qa-instagram--intro">
