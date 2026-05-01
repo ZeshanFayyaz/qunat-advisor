@@ -12,7 +12,7 @@ type Props = {
   onReset: () => void;
 };
 
-export function RecommendState({ data, classification, onReset }: Props) {
+export function RecommendState({ data, classification, profile, onReset }: Props) {
   const topConcern = classification?.concerns?.[0]?.label ?? "general";
   const allConcernsString =
     classification?.concerns
@@ -127,6 +127,9 @@ export function RecommendState({ data, classification, onReset }: Props) {
         variant="full"
         topConcern={topConcern}
         allConcerns={allConcernsString}
+        skinType={profile.skin_type}
+        fitzpatrick={profile.fitzpatrick}
+        routineSize={profile.routine_size}
       />
 
       {/* 3. BUNDLE — hero / primary sales moment if present */}
