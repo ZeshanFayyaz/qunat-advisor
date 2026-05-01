@@ -28,19 +28,21 @@ export async function logSignupToAirtable(p: SignupPayload): Promise<void> {
 
   const url = `https://api.airtable.com/v0/${baseId}/${encodeURIComponent(tableName)}`;
 
-  const body = {
-    fields: {
-      Name: p.name,
-      Email: p.email,
-      "Top Concern": p.topConcern,
-      "All Concerns": p.allConcerns,
-      "Skin Type": p.skinType ?? "",
-      Fitzpatrick: p.fitzpatrick ?? "",
-      "Routine Size": p.routineSize ?? "",
-      "Entry Point": p.entryPoint,
-      "Session ID": p.sessionId,
-    },
+  // Strip empty/null values — Airtable rejects empty strings on select fields
+  // and including them as "" pollutes records anyway.
+  const fields: Record<string, string> = {
+    Name: p.name,
+    Email: p.email,
+    "Top Concern": p.topConcern,
+    "All Concerns": p.allConcerns,
+    "Entry Point": p.entryPoint,
+    "Session ID": p.sessionId,
   };
+  if (p.skinType) fields["Skin Type"] = p.skinType;
+  if (p.fitzpatrick) fields["Fitzpatrick"] = p.fitzpatrick;
+  if (p.routineSize) fields["Routine Size"] = p.routineSize;
+
+  const body = { fields };
 
   try {
     const res = await fetch(url, {
