@@ -3,7 +3,6 @@ import { downscaleImage } from "../lib/imageProcess";
 import { SamplePhotosModal } from "./SamplePhotosModal";
 import type { IntroData } from "../state/machine";
 import { track } from "../lib/analytics";
-import { EmailCaptureCard } from "./EmailCaptureCard";
 
 type Props = {
   onSubmit: (data: IntroData) => void;
@@ -67,8 +66,6 @@ export function IntroState({ onSubmit }: Props) {
         <p class="qa-subtitle">
           Pick any path below. Combine them for the best match.
         </p>
-
-        <EmailCaptureCard entryPoint="intro" variant="compact" />
 
         {/* Three-path tabs */}
         <div class="qa-path-tabs" role="tablist">
