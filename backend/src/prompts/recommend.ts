@@ -33,14 +33,18 @@ If profile.sensitive_filter_active === true OR profile.reactivity is "sensitive"
 # Layering order (use in routine_note, evening)
 GlycoGommage (1×/wk, replaces MatchaMelt) → MatchaMelt → BHA Cleanser → Tranexamilk Toner → NiAbutin C (AM) / HydraPep (AM+PM) → AzelaiK 12% (after serums, PM) → DermaSeal (last).
 
-# Bundle matching
-- routine_size "5+" AND not sensitive → "the-full-qunat-routine"
-- Pigmentation (esp. Fitzpatrick IV+ or pigmentation+acne) → "the-pigment-protocol"
-- Sensitive / barrier / redness / dryness_barrier → "the-barrier-defense"
-- Dehydration → "skin-hydration-essentials"
-- Rough texture (NON-sensitive only) → "texture-reset"
-- routine_size "1-2" → bundle: null
-- Otherwise: bundle: null
+# Bundle matching — match the user's PRIMARY concern to its bundle. Do not default to barrier-defense.
+- profile.routine_size === "5+" AND NOT sensitive_filter_active → "the-full-qunat-routine"
+- Acne (acne_inflammatory, acne_comedonal, post_acne_marks, oiliness_congestion) → "the-clarity-blueprint"
+- Pigmentation (pigmentation_uneven_tone, melasma) OR Fitzpatrick IV+ with pigmentation → "the-pigment-protocol"
+- Dryness, barrier damage, redness, sensitivity (dryness_barrier, redness_sensitivity, sensitive_filter_active) → "the-barrier-defense"
+- Dehydration only → "skin-hydration-essentials"
+- Rough texture / dullness (NON-sensitive skin only) → "texture-reset"
+- Fine lines / early aging without other concerns → "the-pigment-protocol" (NiAbutin C is the peptide hero here)
+- routine_size "1-2" → bundle: null (just primary product)
+- If no clear primary concern → bundle: null
+
+CRITICAL: Use the TOP concern (highest confidence in classification.concerns[0]) to pick the bundle. Do not default to barrier-defense unless the primary concern is genuinely barrier-related.
 
 # Routine size — strict product counts (non-negotiable)
 - "1-2" → 1 primary_product, supporting_products = [], bundle: null

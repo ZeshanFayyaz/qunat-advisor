@@ -75,5 +75,17 @@
     "positioning": "Smooth the surface, clear underneath.",
     "why": "GlycoGommage resurfaces weekly, AzelaiK works every evening to clear congestion and inflammation at a deeper layer.",
     "priority_weight": 70
+  },
+  {
+    "slug": "the-clarity-blueprint",
+    "name": "The Clarity Blueprint",
+    "tagline": "for acne, breakouts, and post-acne marks",
+    "shopify_handle": "the-clarity-blueprint",
+    "is_hero": false,
+    "is_all_in": false,
+    "is_double_cleanse": false,
+    "positioning": "Two-step system: AzelaiK 12% to clear acne-causing bacteria and regulate sebum, TraneXaMilk to target stubborn pigmentation and post-acne marks. Skin clears, tone evens, complexion refines.",
+    "why": "AzelaiK fights acne production at the source while TraneXaMilk simultaneously addresses the dark marks left behind. The two work in different lanes so they layer without irritation.",
+    "products": ["azelaik-12-micro-emulsion", "tranexamilk"]
   }
 ]
