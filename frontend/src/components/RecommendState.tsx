@@ -3,6 +3,7 @@ import type { Recommendation, Classification, SkinProfile, ProductReason } from 
 import { addToCart, pdpUrl } from "../lib/cart";
 import { postFeedback } from "../lib/api";
 import { track, getSessionId } from "../lib/analytics";
+import { EmailCaptureCard } from "./EmailCaptureCard";
 
 type Props = {
   data: Recommendation;
@@ -12,6 +13,11 @@ type Props = {
 };
 
 export function RecommendState({ data, classification, onReset }: Props) {
+  const topConcern = classification?.concerns?.[0]?.label ?? "general";
+  const allConcernsString =
+    classification?.concerns
+      ?.map((c) => `${c.label} (${Math.round(c.confidence * 100)}%)`)
+      .join(", ") ?? "general";
   const [rating, setRating] = useState<"up" | "down" | null>(null);
   const [adding, setAdding] = useState<string | null>(null);
   const [matchaAdded, setMatchaAdded] = useState(false);
@@ -19,7 +25,26 @@ export function RecommendState({ data, classification, onReset }: Props) {
   const primary = data.primary_product;
   const bundle = data.bundle?.bundle ?? null;
   const secondaryBundle = data.secondary_bundle?.bundle ?? null;
-  const allProducts = [primary, ...data.supporting_products];
+  
+  // When a bundle is recommended, the "Shop individually" list is derived
+  // from the bundle's contents — so the user sees consistency between
+  // "buy the bundle" and "buy these one at a time."
+  // When no bundle is recommended, fall back to primary + supporting picks.
+  const allProducts = bundle
+    ? bundle.products.map((bp: any) => {
+        // Find matching reason from primary/supporting if available
+        const matchingPick = [primary, ...data.supporting_products].find(
+          (pr) => pr.slug === bp.slug
+        );
+        return {
+          slug: bp.slug,
+          reason: matchingPick?.reason ?? `Part of the ${bundle.name}.`,
+          usage: matchingPick?.usage ?? null,
+          frequency_warning: matchingPick?.frequency_warning ?? null,
+          product: bp,
+        };
+      })
+    : [primary, ...data.supporting_products];
 
   const handleBundleShop = async (which: "primary" | "secondary") => {
     const target = which === "primary" ? bundle : secondaryBundle;
@@ -335,6 +360,13 @@ export function RecommendState({ data, classification, onReset }: Props) {
           </div>
         )}
       </div>
+
+      <EmailCaptureCard
+        entryPoint="result"
+        variant="full"
+        topConcern={topConcern}
+        allConcerns={allConcernsString}
+      />
 
       {/* 6. Instagram consultation — only when AI flagged severity */}
       {data.instagram_consultation && (

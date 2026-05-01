@@ -3,6 +3,7 @@ import { downscaleImage } from "../lib/imageProcess";
 import { SamplePhotosModal } from "./SamplePhotosModal";
 import type { IntroData } from "../state/machine";
 import { track } from "../lib/analytics";
+import { EmailCaptureCard } from "./EmailCaptureCard";
 
 type Props = {
   onSubmit: (data: IntroData) => void;
@@ -214,6 +215,8 @@ export function IntroState({ onSubmit }: Props) {
           </button>
         </div>
       </div>
+
+      <EmailCaptureCard entryPoint="intro" variant="compact" />
 
       {/* Always-visible Instagram consultation — safety net for significant concerns */}
       <div class="qa-instagram qa-instagram--intro">

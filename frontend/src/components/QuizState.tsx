@@ -74,7 +74,7 @@ const Q6 = {
 
 const Q7 = {
   id: "sun_behavior" as const,
-  label: "7 · What happens when you stay in the sun without protection?",
+  label: "7 · What happens when you stay in the sun without protection? If none apply, please select option C.",
   options: [
     { key: "A", label: "Always burns, never tans" },
     { key: "B", label: "Burns easily, tans minimally" },

@@ -2,6 +2,7 @@ import "dotenv/config";
 import express from "express";
 import cors from "cors";
 import { adviseRouter } from "./routes/advise.js";
+import { signupRouter } from "./routes/signup.js";
 import { productsRouter, bundlesRouter, feedbackRouter, healthRouter } from "./routes/misc.js";
 import { logger } from "./lib/logger.js";
 
@@ -34,6 +35,7 @@ app.use("/api/products", productsRouter);
 app.use("/api/bundles", bundlesRouter);
 app.use("/api/feedback", feedbackRouter);
 app.use("/api/advise", adviseRouter);
+app.use("/api/signup", signupRouter);
 
 app.use((err: any, _req: express.Request, res: express.Response, _next: express.NextFunction) => {
   logger.error("unhandled_error", { message: err?.message });

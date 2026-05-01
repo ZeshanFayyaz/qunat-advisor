@@ -1139,8 +1139,13 @@ body {
   font-weight: 600;
   font-size: 18px;
   line-height: 1.25;
-  margin: 0;
+  margin: 0 !important;
+  padding: 0 !important;
   letter-spacing: -0.005em;
+  color: var(--qa-ink) !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 .qa-product-row-price {
   font-family: var(--qa-sans);
@@ -1321,4 +1326,91 @@ body {
   .qa-footer-actions { flex-direction: column; align-items: flex-start; }
   .qa-instagram { flex-direction: column; align-items: flex-start; }
   .qa-modal { padding: 24px 20px; }
+}
+
+/* ===== Email capture card ===== */
+.qa-email-card {
+  background: var(--qa-cream);
+  border: 1px solid var(--qa-border);
+  border-radius: var(--qa-radius-md);
+  padding: 28px;
+  margin: 32px 0;
+}
+.qa-email-card--compact {
+  padding: 20px;
+  margin: 20px 0;
+}
+.qa-email-card--done {
+  text-align: center;
+  background: var(--qa-cream-deep);
+}
+.qa-email-eyebrow {
+  font-family: var(--qa-display);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--qa-accent);
+  margin: 0 0 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.qa-email-eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--qa-accent);
+}
+.qa-email-title {
+  font-family: var(--qa-display);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+  margin: 0 0 8px;
+  color: var(--qa-ink);
+}
+.qa-email-card--compact .qa-email-title {
+  font-size: 18px;
+}
+.qa-email-sub {
+  font-family: var(--qa-sans);
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--qa-muted);
+  margin: 0 0 18px;
+  max-width: 56ch;
+}
+.qa-email-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.qa-email-input {
+  flex: 1 1 200px;
+  padding: 13px 16px;
+  border: 1px solid var(--qa-border);
+  border-radius: var(--qa-radius-sm);
+  font-family: var(--qa-sans);
+  font-size: 15px;
+  color: var(--qa-ink);
+  background: var(--qa-bg);
+  outline: none;
+  transition: border-color 180ms var(--qa-ease);
+}
+.qa-email-input:focus {
+  border-color: var(--qa-ink);
+}
+.qa-email-form .qa-btn {
+  flex: 0 0 auto;
+}
+.qa-email-thanks {
+  font-family: var(--qa-italic);
+  font-style: italic;
+  font-size: 17px;
+  color: var(--qa-ink);
+  margin: 0;
 }
